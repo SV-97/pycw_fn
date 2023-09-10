@@ -11,6 +11,7 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = ["delegateto>=1.5", "numpy>=1.25"]
+keywords = ["piecewise function", "math", "science"]
 
 [project.urls]
 "Homepage" = "https://github.com/SV-97/pycw_fn"
