@@ -12,9 +12,6 @@ import matplotlib.pyplot as plt
 from numpy.polynomial import Polynomial
 from pycw_fn import PcwFn
 
-rng = np.random.default_rng(0)
-ts = rng.uniform(0, 1, size=1000)
-ts = np.sort(ts)
 g_0 = PcwFn.from_funcs_and_jumps(
     [
         Polynomial([1, 5, -10], window=np.array([-1., 1.]),
@@ -44,25 +41,15 @@ g_1 = PcwFn.from_funcs_and_jumps(
 
 b_2 = Polynomial([1/10, -4, 40])
 g_2 = PcwFn.from_funcs_and_jumps(
-    [
-        b_2(Polynomial([-0.1*a, 1])) for a in range(10)
-    ],
-    [
-        0.1,
-        0.2,
-        0.3,
-        0.4,
-        0.5,
-        0.6,
-        0.7,
-        0.8,
-        0.9,
-    ],
+    [b_2(Polynomial([-0.1*a, 1])) for a in range(10)],
+    np.linspace(0.1, 1, num=9, endpoint=False),
 )
 
 g = g_0 + 5 * g_2
-ys = g(ts)
 
+ts = np.linspace(0, 1, num=1000)
+ys = g(ts)
 plt.plot(ts, ys)
 plt.show()
+
 ```
