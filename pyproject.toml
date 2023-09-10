@@ -12,6 +12,9 @@ classifiers = [
 ]
 dependencies = ["delegateto>=1.5", "numpy>=1.25"]
 
+[project.urls]
+"Homepage" = "https://github.com/SV-97/pycw_fn"
+"Bug Tracker" = "https://github.com/SV-97/pycw_fn/issues"
 
 [tool.maturin]
 features = ["pyo3/extension-module"]
