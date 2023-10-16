@@ -1,4 +1,4 @@
-from . import pcw_fn_py as _rs
+from . import pycw_fn as _rs
 
 from dataclasses import dataclass
 import numpy as np
